@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Apple() {
+        this.weight = 10;
+        this.decrease = function () {
+            this.weight--;
+        };
+        this.isEmpty = function () {
+            if(this.weight>0){
+                return true;
+            }
+        };
+        this.getWeight = function () {
+             return this.weight;
+        }
+    }
+    function Human(name,gender,weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        this.setGender = gender;
+        this.isMale = function () {
+            return this.gender;
+        };
+        this.checkApple = function (apple) {
+            return apple.weight;
+        };
+        this.eat = function (apple) {
+            apple.decrease();
+            this.weight++;
+        };
+        this.say=function () {
+            document.write("an di")
+        };
+        this.getName = function () {
+            return this.name;
+        };
+        this.setName = function (name) {
+            this.name=name;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.setWeight = function (weight) {
+            this.weight=weight;
+        }
+    }
+    let apple = new Apple();
+    let Adam = new Human("Adam",true,70);
+    let Eva = new Human("Eva",false,55);
+    for(let i=1;apple.getWeight()>0;i++){
+        Adam.eat(apple);
+        document.write("so can nang cua qua tao : " + apple.weight + "<br/>");
+        document.write("so can nang cua adam sua khi an: " + Adam.weight + "<br/>");
+        Eva.eat(apple);
+        document.write("so can nang cua qua tao la : " + apple.weight + "<br/>");
+        document.write("so can nang cua eva sau khi an la : " + Eva.weight + "<br/>")
+    }
+</script>
+</body>
+</html>
